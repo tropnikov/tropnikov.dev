@@ -1,0 +1,64 @@
+# This is a basic workflow to help you get started with Actions - you can change the name to be more reflective of your Action
+
+name: Deploy to server
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push request events but only for the main branch
+  push:
+    branches: [main]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+  # Allows A Webhook to be called which will run the Action. Use this for example from WordPress with the GatsbyJS plugin.
+  # repository_dispatch:
+  #   types: [publish_blog]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Check out latest code
+        uses: actions/checkout@v2
+
+      # Grab the required version of NodeJS
+      - name: Set Node.js
+        uses: actions/setup-node@v2.2.0
+        with:
+          node-version: 16.20.x
+
+      # Install all the Node dependencies for Gatsby, using your package.json file.
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Astro
+        run: npm run build
+
+      - name: Install Deployment SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: "unnecessary"
+
+      - name: Adding Known Hosts
+        run: ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }}  >> ~/.ssh/known_hosts
+
+      # Finally, deploy it to your very own server
+      - name: Deploy
+        run: rsync -avzh --delete-during --ignore-times --checksum -e 'ssh -p ${{ secrets.SSH_PORT }}' ./dist/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.TARGET_DIR }}
+
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Restart nginx
+        run: echo ${{ secrets.PASS }} | sshpass ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} sudo -S service nginx restart >> /dev/null 2>&1
+
+      - name: Send success message to Telegram
+        run: curl -X POST "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.CHAT_ID }}&text=tropnikov.me deployed :)" -s 1>/dev/null

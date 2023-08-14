@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import pdf from "../assets/file-pdf.svg";
+import github from "../assets/github.svg";
+import linkedin from "../assets/linkedin.svg";
+import mail from "../assets/mail.svg";
+import telegram from "../assets/baseline-telegram.svg";
+---
+
+<Layout title='Maks Tropnikov'>
+  <main
+    class='flex flex-col justify-start items-center mx-auto my-0 mt-48 w-11/12'
+  >
+    <h1
+      class='text-3xl sm:text-5xl md:text-6xl font-semibold my-4 md:my-8 text-white'
+    >
+      Maksim Tropnikov
+    </h1>
+
+    <ul role='list' class='grid grid-cols-5 gap-2 sm:gap-3'>
+      <Card href='https://github.com/tropnikov' icon={github} />
+      <Card
+        href='https://www.linkedin.com/in/maksim-tropnikov/'
+        icon={linkedin}
+      />
+
+      <Card href='https://t.me/tropnikov' icon={telegram} />
+      <Card href='mailto:maks@tropnikov.me' icon={mail} />
+      <Card
+        href='https://raw.githubusercontent.com/tropnikov/tropnikov/master/Maksim-Tropnikov-Frontend-CV.pdf'
+        icon={pdf}
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    /* padding: 1rem; */
+    /* width: 800px; */
+    /* max-width: calc(100% - 2rem); */
+    /* color: white; */
+    /* font-size: 20px; */
+    /* line-height: 1.6; */
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* background-size: 400%; */
+    background-position: 0%;
+  }
+</style>
