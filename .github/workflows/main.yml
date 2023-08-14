@@ -61,4 +61,4 @@ jobs:
         run: echo ${{ secrets.PASS }} | sshpass ssh -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} sudo -S service nginx restart >> /dev/null 2>&1
 
       - name: Send success message to Telegram
-        run: curl -X POST "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.CHAT_ID }}&text=tropnikov.me deployed :)" -s 1>/dev/null
+        run: curl -X POST "https://api.telegram.org/bot${{ secrets.BOT_TOKEN }}/sendMessage" -d "chat_id=${{ secrets.CHAT_ID }}&text=tropnikov.me deployed 🚀" -s 1>/dev/null
