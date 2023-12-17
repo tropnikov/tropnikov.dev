@@ -1,12 +1,12 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import telegram from '../assets/baseline-telegram.svg';
 import pdf from '../assets/file-pdf.svg';
 import github from '../assets/github.svg';
 import linkedin from '../assets/linkedin.svg';
 import mail from '../assets/mail.svg';
-import telegram from '../assets/baseline-telegram.svg';
 import mastodon from '../assets/mastodon.svg';
+import Card from '../components/Card.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title='Max Tropnikov'>
@@ -20,15 +20,21 @@ import mastodon from '../assets/mastodon.svg';
     </h1>
 
     <ul role='list' class='grid grid-cols-6 gap-2 sm:gap-3'>
-      <Card href='https://github.com/tropnikov' icon={github} />
+      <Card href='https://github.com/tropnikov' icon={github} target='_blank' />
       <Card
         href='https://www.linkedin.com/in/maksim-tropnikov/'
         icon={linkedin}
+        target='_blank'
       />
-      <Card href='https://mastodon.social/@totmaks' icon={mastodon} rel='me' />
-      <Card href='https://t.me/tropnikov' icon={telegram} />
+      <Card
+        href='https://mastodon.social/@totmaks'
+        icon={mastodon}
+        rel='me'
+        target='_blank'
+      />
+      <Card href='https://t.me/tropnikov' icon={telegram} target='_blank' />
       <Card href='mailto:max@tropnikov.dev' icon={mail} />
-      <Card href='/Max-Tropnikov-Frontend-CV.pdf' icon={pdf} />
+      <Card href='Max-Tropnikov-Frontend-CV.pdf' icon={pdf} />
     </ul>
   </main>
 </Layout>
