@@ -4,14 +4,23 @@ interface Props {
   href: string;
   rel?: string;
   target?: string;
+  type?: string;
+  title?: string;
 }
 
-const { href, icon, rel, target } = Astro.props;
+const { href, icon, rel, target, type, title } = Astro.props;
 ---
 
 <li class='link-card'>
-  <a href={href} target={target} rel={rel} class='p-1.5 sm:p-2.5'>
-    <img src={icon} alt='link icon' class='w-7 md:w-10' />
+  <a
+    href={href}
+    target={target}
+    rel={rel}
+    class='p-1.5 sm:p-2.5'
+    title={title}
+    aria-label={`${type} link`}
+  >
+    <img src={icon} alt={`${type} icon`} class='w-7 md:w-10' />
   </a>
 </li>
 <style>

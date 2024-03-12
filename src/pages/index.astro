@@ -20,21 +20,47 @@ import Layout from '../layouts/Layout.astro';
     </h1>
 
     <ul role='list' class='grid grid-cols-6 gap-2 sm:gap-3'>
-      <Card href='https://github.com/tropnikov' icon={github} target='_blank' />
+      <Card
+        href='https://github.com/tropnikov'
+        icon={github}
+        target='_blank'
+        type='github'
+        title='github'
+      />
       <Card
         href='https://www.linkedin.com/in/maksim-tropnikov/'
         icon={linkedin}
         target='_blank'
+        type='linkedin'
+        title='linkedin'
       />
       <Card
         href='https://mastodon.social/@totmaks'
         icon={mastodon}
         rel='me'
         target='_blank'
+        type='mastodon'
+        title='mastodon'
       />
-      <Card href='https://t.me/tropnikov' icon={telegram} target='_blank' />
-      <Card href='mailto:max@tropnikov.dev' icon={mail} />
-      <Card href='Max-Tropnikov-CV-Frontend.pdf' icon={pdf} />
+      <Card
+        href='https://t.me/tropnikov'
+        icon={telegram}
+        target='_blank'
+        type='telegram'
+        title='telegram'
+      />
+      <Card
+        href='mailto:max@tropnikov.dev'
+        icon={mail}
+        type='mail'
+        title='mail'
+      />
+      <Card
+        href='Max-Tropnikov-CV-Frontend.pdf'
+        icon={pdf}
+        type='pdf'
+        title='cv'
+      />
     </ul>
   </main>
 </Layout>
