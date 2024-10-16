@@ -1,0 +1,54 @@
+---
+import "@styles/global.css";
+import { SITE } from "@utils/constants";
+
+const image = `${Astro.url.origin}/og-image.png`;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Max Tropnikov",
+  url: "https://tropnikov.dev",
+  sameAs: [
+    "https://www.linkedin.com/in/maksim-tropnikov/",
+    "https://github.com/tropnikov",
+  ],
+  image: "https://tropnikov.dev/og-image.png",
+  jobTitle: "Frontend Software Engineer",
+  nationality: {
+    "@type": "Country",
+    name: "Russia",
+  },
+};
+---
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+<title>{SITE.TITLE}</title>
+<meta name="description" content={SITE.DESCRIPTION} />
+<meta name="robots" content="/favicon/sitemap-index.xml" />
+<!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn -->
+<meta property="og:title" content={SITE.TITLE} />
+<meta property="og:description" content={SITE.DESCRIPTION} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.origin} />
+<meta
+  property="og:image"
+  content={image || "https://tropnikov.dev/og-image.png"}
+/>
+<!-- Basic Twitter Card tags -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={SITE.TITLE} />
+<meta name="twitter:description" content={SITE.DESCRIPTION} />
+<meta
+  name="twitter:image"
+  content={image || "https://tropnikov.dev/og-image.png"}
+/>
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<meta name="msapplication-TileColor" content="#171717" />
+<meta name="theme-color" content="#171717" />
+<link rel="preconnect" href="https://rsms.me/" />
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />

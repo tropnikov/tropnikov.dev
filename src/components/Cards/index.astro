@@ -1,0 +1,48 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  body?: string;
+  colSpan?: string;
+  rowSpan?: string;
+  href?: string;
+  target?: string;
+  colorText?: string;
+  height?: string;
+  width?: string;
+  classes?: string;
+}
+
+const {
+  title,
+  subtitle,
+  body,
+  colSpan,
+  rowSpan,
+  href,
+  colorText,
+  height,
+  target,
+  classes,
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    "card transform-y-[-40%] align-start perspective-1200 dark:shadow-thick group relative col-span-1 h-max w-full flex-none transform justify-start overflow-hidden rounded-3xl bg-white p-6 shadow-xl ring-1 ring-primary/5 transition duration-75 ease-in-out dark:bg-secondary dark:ring-white/10 sm:h-auto",
+    colSpan || "md:col-span-2",
+    rowSpan,
+    classes,
+  ]}
+>
+  {
+    title && (
+      <h2 class="z-20 m-0 text-xl font-semibold tracking-tight text-primary dark:text-white lg:text-2xl">
+        {title}
+        <span class="text-sm font-normal italic text-gray-500">{subtitle}</span>
+      </h2>
+    )
+  }
+  {body && <p class="m-0 text-base font-light">{body}</p>}
+  <slot />
+</div>

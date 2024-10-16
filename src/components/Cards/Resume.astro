@@ -1,0 +1,26 @@
+---
+import Card from "./index.astro";
+import SocialIcon from "../UI/SocialIcon.astro";
+---
+
+<Card colSpan="md:col-span-1" rowSpan="md:row-span-1">
+  <div class="flex h-full flex-col justify-between">
+    <header class="flex items-center">
+      <h1
+        class="z-20 m-0 text-xl font-semibold tracking-tight text-primary dark:text-white lg:text-2xl"
+      >
+        Grab my résumé
+      </h1>
+    </header>
+    <a
+      href="https://cv.tropnikov.dev"
+      aria-label="resume"
+      target="_blank"
+      title="résumé"
+      class="group-hover text-primary:dark:text-white/50 shadow-custom shadow-primary-500 focus:ring-inline-flex text-md dark:shadow-thick group mt-2 flex h-10 w-full cursor-pointer items-center justify-between rounded-lg bg-primary px-5 py-2 font-semibold text-white shadow-xl ring-1 ring-primary/5 transition-all duration-300 hover:scale-105 hover:ring-primary/5 focus:ring-2 focus:ring-offset-2 active:translate-x-[3px] active:translate-y-[3px] active:shadow-none dark:bg-white dark:text-primary dark:ring-white/10"
+    >
+      CV
+      <SocialIcon icon="tabler:arrow-up-right" classes="group-hover" />
+    </a>
+  </div>
+</Card>

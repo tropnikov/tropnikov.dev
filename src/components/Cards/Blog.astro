@@ -1,0 +1,14 @@
+---
+import { LINKS } from "../../utils/constants";
+import Card from "./index.astro";
+import LinkCard from "./Link.astro";
+---
+
+<LinkCard
+  colSpan="md:col-span-1"
+  rowSpan="sm:row-span-1 md:row-span-2 flex gap-4"
+  title="Blog"
+  href="https://blog.tropnikov.dev"
+  target="_blank"
+  classes="hover:ring-red-500 dark:hover:ring-red-500 row-start-5 sm:row-start-5 md:row-start-8 lg:row-start-6"
+/>

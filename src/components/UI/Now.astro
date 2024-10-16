@@ -1,0 +1,22 @@
+---
+import LinkCard from "../Cards/Link.astro";
+import Pulse from "./Pulse.astro";
+---
+
+<LinkCard
+  colSpan="md:col-span-1"
+  rowSpan="sm:row-span-2 md:row-span-2"
+  href="https://blog.tropnikov.dev/now"
+  target="_blank"
+  classes="hover:ring-red-500 dark:hover:ring-red-500 row-start-4 sm:row-start-5 md:row-start-8 lg:row-start-6"
+>
+  <h2
+    slot="title"
+    class="z-20 m-0 flex items-baseline gap-3 text-xl font-semibold tracking-tight text-primary dark:text-white lg:text-2xl"
+  >
+    Now <Pulse />
+  </h2>
+  <div class="mt-2 flex flex-col gap-2 self-end">
+    <p>What am I doing now? Check out my now page</p>
+  </div>
+</LinkCard>
