@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/tropnikov/tropnikov.dev"
   },
+  "packageManager": "pnpm@9.10.0",
   "engines": {
     "pnpm": "^9.10.0",
     "node": ">=18.0.0"
