@@ -20,5 +20,4 @@ export default defineConfig({
     }),
     icon(),
   ],
-  output: "server",
 });
