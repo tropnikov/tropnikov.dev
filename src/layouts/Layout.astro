@@ -11,7 +11,8 @@ import Header from "@components/Structure/Header.astro";
     class="flex min-h-dvh flex-col items-center justify-center bg-zinc-200 dark:bg-primary"
   >
     <slot />
-    <script async defer src="https://scripts.withcabin.com/hello.js"></script>
+    <script is:inline async defer src="https://scripts.withcabin.com/hello.js"
+    ></script>
 
     <script is:inline>
       if (

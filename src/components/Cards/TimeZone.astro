@@ -12,7 +12,6 @@ import Card from "./index.astro";
 
   function updateClock() {
     const timeDisplay = document.getElementById("timeDisplay");
-    const now = new Date();
 
     if (timeDisplay) {
       timeDisplay.textContent = formatTimeInTimezone(getCurrentTime());

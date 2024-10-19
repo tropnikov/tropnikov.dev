@@ -47,7 +47,11 @@ const schema = {
   content={image || "https://tropnikov.dev/og-image.png"}
 />
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+<script
+  is:inline
+  type="application/ld+json"
+  set:html={JSON.stringify(schema)}
+/>
 <meta name="msapplication-TileColor" content="#171717" />
 <meta name="theme-color" content="#171717" />
 <link rel="preconnect" href="https://rsms.me/" />
