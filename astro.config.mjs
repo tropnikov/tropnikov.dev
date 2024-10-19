@@ -1,10 +1,12 @@
+import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 import icon from "astro-icon";
 import robotsTxt from "astro-robots-txt";
 
-import { defineConfig } from "astro/config";
+import { execSync } from "node:child_process";
+const commitHash = execSync("git rev-parse --short HEAD").toString();
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,4 +22,9 @@ export default defineConfig({
     }),
     icon(),
   ],
+  vite: {
+    define: {
+      __COMMIT_HASH__: JSON.stringify(commitHash),
+    },
+  },
 });

@@ -8,7 +8,11 @@ import Card from "./index.astro";
     <p
       class="md:text-md font-medium tracking-tight text-primary dark:text-white"
     >
-      &copy; {new Date().getFullYear()}
+      &copy; {new Date().getFullYear()} • <a
+        class="font-light text-red-500 hover:text-red-600"
+        href={`https://github.com/tropnikov/tropnikov.dev/commit/${__COMMIT_HASH__}`}
+        target="_blank">#{__COMMIT_HASH__}</a
+      >
     </p>
     <p
       class="md:text-md font-medium tracking-tight text-primary dark:text-white"
