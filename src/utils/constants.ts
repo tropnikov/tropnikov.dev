@@ -17,4 +17,8 @@ export const LINKS = {
   twitter: "https://twitter.com/totmaks",
 };
 
-export const loaderAnimation = [".loader", { opacity: [1, 0], pointerEvents: "none" }, { easing: "ease-out" }];
+export const loaderAnimation = [
+  ".loader",
+  { opacity: [1, 0], pointerEvents: "none" },
+  { easing: "ease-out" },
+];
