@@ -1,4 +1,4 @@
-const timeZone = "Europe/Istanbul";
+const timeZone = "Asia/Novosibirsk";
 
 export function getCurrentTime(): Date {
   return new Date();
@@ -21,7 +21,7 @@ export function formatTimeInTimezone(date: Date): string {
 
   let formattedTime = new Intl.DateTimeFormat("en-US", options).format(date);
 
-  formattedTime += " EEST (UTC+3)";
+  formattedTime += " (UTC+7)";
 
   return formattedTime;
 }
