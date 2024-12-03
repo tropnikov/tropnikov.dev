@@ -1,9 +1,9 @@
 import type { Site } from "@utils/types.ts";
 
 export const SITE: Site = {
-  TITLE: "Max Tropnikov – Front-end Engineer",
+  TITLE: "Max Tropnikov – Frontend Engineer",
   DESCRIPTION:
-    "Max Tropnikov is a software frontend engineer, passionate about user experience and speed. Currently in Istanbul, Turkey.",
+    "Max Tropnikov is a software frontend engineer, passionate about user experience and speed. Currently in Moscow, Russia.",
   EMAIL: "max@tropnikov.dev",
 };
 
