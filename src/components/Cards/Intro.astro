@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import Card from "./index.astro";
+import SocialButton from "../UI/SocialButton.astro";
+---
+
+<Card colSpan="md:col-span-3 sm:col-span-2" rowSpan="md:row-span-4">
+  <div class="flex h-full w-full">
+    <div class="flex flex-col justify-between gap-4 md:max-h-[300px]">
+      <div class="flex h-full flex-col">
+        <p
+          class="m-0 max-w-[80%] text-xl font-light text-primary dark:text-white md:max-w-full"
+        >
+          Hello, I'm <b class="font-bold">Max Tropnikov</b>, a frontend software
+          engineer with a strong focus on user experience.
+        </p>
+      </div>
+
+      <div class="flex gap-2 sm:max-w-full sm:gap-4 md:flex-nowrap">
+        <SocialButton link="email" icon="mail" title="Email" />
+        <SocialButton link="telegram" icon="brand-telegram" title="Telegram" />
+        <SocialButton link="github" icon="brand-github" title="GitHub" />
+        <SocialButton link="linkedin" icon="brand-linkedin" title="LinkedIn" />
+        <SocialButton link="mastodon" icon="brand-mastodon" title="Mastodon" />
+        <!--<SocialButton link="bento" icon="world" title="Bento" />-->
+      </div>
+    </div>
+    <Image
+      height="300"
+      width="300"
+      src="/me.png"
+      class="pointer-events-none absolute bottom-[-20px] right-[-110px] z-[-1] max-h-[300px] w-auto select-none opacity-50 md:relative md:bottom-auto md:right-auto md:z-auto md:opacity-100"
+      alt="memoji of Max Tropnikov"
+      loading="eager"
+    />
+  </div>
+</Card>

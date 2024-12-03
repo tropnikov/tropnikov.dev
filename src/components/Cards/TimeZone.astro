@@ -1,0 +1,41 @@
+---
+import { getCurrentTime, formatTimeInTimezone } from "@utils/helpers";
+import Card from "./index.astro";
+---
+
+<script>
+  import {
+    getCurrentTime,
+    formatTimeInTimezone,
+    getCurrentTimeInTimezone,
+  } from "@utils/helpers";
+
+  function updateClock() {
+    const timeDisplay = document.getElementById("timeDisplay");
+
+    if (timeDisplay) {
+      timeDisplay.textContent = formatTimeInTimezone(getCurrentTime());
+      timeDisplay.setAttribute(
+        "datetime",
+        getCurrentTimeInTimezone().toISOString(),
+      );
+    }
+  }
+
+  setInterval(updateClock, 1000);
+</script>
+
+<Card
+  colSpan="lg:col-span-2"
+  rowSpan="md:row-span-1"
+  title="Time zone"
+  classes=""
+>
+  <time
+    datetime=""
+    id="timeDisplay"
+    class="w-50 xl:w-100 flex h-[calc(100%-28px)] items-center justify-center font-serif text-xl md:text-xl lg:text-2xl xl:whitespace-nowrap"
+  >
+    {formatTimeInTimezone(getCurrentTime())}
+  </time>
+</Card>

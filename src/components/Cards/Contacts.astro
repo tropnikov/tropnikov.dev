@@ -1,0 +1,58 @@
+---
+import { LINKS } from "../../utils/constants";
+import Card from "./index.astro";
+---
+
+<Card
+  colSpan="md:col-span-1"
+  rowSpan="lg:row-span-2 md:row-span-2"
+  title="Contacts"
+  subtitle="(now as text)"
+  classes="lg:col-start-1  lg:row-start-6"
+>
+  <div class="h-full">
+    <div class="mt-2 flex w-fit flex-col">
+      <ul>
+        <li>
+          <a
+            href={LINKS.email}
+            target="_blank"
+            class="hover:text-primary/70 dark:hover:text-white/70">Email</a
+          >
+        </li>
+        <li>
+          <a
+            href={LINKS.telegram}
+            target="_blank"
+            class="hover:text-primary/70 dark:hover:text-white/70">Telegram</a
+          >
+        </li>
+        <li>
+          <a
+            href={LINKS.github}
+            target="_blank"
+            class="hover:text-primary/70 dark:hover:text-white/70">Github</a
+          >
+        </li>
+        <li>
+          <a
+            href={LINKS.linkedin}
+            target="_blank"
+            class="hover:text-primary/70 dark:hover:text-white/70">Linkedin</a
+          >
+        </li>
+
+        <li>
+          <a
+            href={LINKS.mastodon}
+            target="_blank"
+            class="hover:text-primary/70 dark:hover:text-white/70">Mastodon</a
+          >
+        </li>
+        <!--<li>-->
+        <!--  <a href={LINKS.bento} target="_blank">Bento</a>-->
+        <!--</li>-->
+      </ul>
+    </div>
+  </div>
+</Card>
