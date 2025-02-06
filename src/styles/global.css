@@ -2,13 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 :root {
-  font-family: Inter, sans-serif;
-  font-feature-settings:
-    "liga" 1,
-    "calt" 1;
+  font-family: "Inter", sans-serif;
 }
 @supports (font-variation-settings: normal) {
   :root {
-    font-family: InterVariable, sans-serif;
+    font-family: "InterVariable", sans-serif;
+    font-optical-sizing: auto;
   }
 }

@@ -1,6 +1,7 @@
 ---
-import "@styles/global.css";
 import { SITE } from "@utils/constants";
+import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 const image = `${Astro.url.origin}/og-image.png`;
 
@@ -29,7 +30,6 @@ const schema = {
 <title>{SITE.TITLE}</title>
 <meta name="description" content={SITE.DESCRIPTION} />
 <meta name="robots" content="/favicon/sitemap-index.xml" />
-<!-- Basic OG tags for sharing your website's content on platforms like Facebook and LinkedIn -->
 <meta property="og:title" content={SITE.TITLE} />
 <meta property="og:description" content={SITE.DESCRIPTION} />
 <meta property="og:type" content="website" />
@@ -38,7 +38,6 @@ const schema = {
   property="og:image"
   content={image || "https://tropnikov.dev/og-image.png"}
 />
-<!-- Basic Twitter Card tags -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={SITE.TITLE} />
 <meta name="twitter:description" content={SITE.DESCRIPTION} />
@@ -54,5 +53,10 @@ const schema = {
 />
 <meta name="msapplication-TileColor" content="#171717" />
 <meta name="theme-color" content="#171717" />
-<link rel="preconnect" href="https://rsms.me/" />
-<link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+<link rel="preload" href="/src/styles/fonts.css" />
+<link rel="preconnect" href="/src/styles/fonts.css" />
+<link rel="stylesheet" href="/src/styles/fonts.css" />
+<link rel="preload" href="/src/styles/global.css" />
+<link rel="stylesheet" href="/src/styles/global.css" />
+<Analytics />
+<SpeedInsights />
