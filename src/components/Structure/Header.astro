@@ -1,4 +1,5 @@
 ---
+import "@styles/global.css";
 import { SITE } from "@utils/constants";
 import Analytics from "@vercel/analytics/astro";
 import SpeedInsights from "@vercel/speed-insights/astro";
@@ -53,10 +54,8 @@ const schema = {
 />
 <meta name="msapplication-TileColor" content="#171717" />
 <meta name="theme-color" content="#171717" />
-<link rel="preload" href="/src/styles/fonts.css" />
-<link rel="preconnect" href="/src/styles/fonts.css" />
-<link rel="stylesheet" href="/src/styles/fonts.css" />
-<link rel="preload" href="/src/styles/global.css" />
-<link rel="stylesheet" href="/src/styles/global.css" />
+<link rel="preload" href="/fonts/Inter.css" />
+<link rel="preconnect" href="/fonts/Inter.css" />
+<link rel="stylesheet" href="/fonts/Inter.css" />
 <Analytics />
 <SpeedInsights />
