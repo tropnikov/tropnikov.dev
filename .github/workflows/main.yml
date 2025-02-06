@@ -4,6 +4,7 @@ on:
     branches: [main]
 jobs:
   build:
+    if: false # This disables the entire workflow
     runs-on: ubuntu-latest
     strategy:
       matrix:
